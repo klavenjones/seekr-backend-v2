@@ -21,6 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prettier:check": "prettier --check ./**/*.{ts,js,json}",
     "prettier:write": "prettier --write ./**/*.{ts,js,json}",
+    "test-all": "npm run test && npm run test:e2e && npm run prettier:check && npm run lint && npm run check-types && npm run build",
     "prepare": "husky install"
   },
   "dependencies": {
