@@ -24,7 +24,9 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is version two of the Seekr Application backend.
+
+Bootstrapped with the [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
@@ -58,16 +60,25 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Formatting
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# linting
+$ npm run lint
 
-## Stay in touch
+# Prettier checks
+$ npm run prettier:check
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Format project with prettier
+$ npm run prettier:write
 
-## License
+```
 
-Nest is [MIT licensed](LICENSE).
+## Running all application checks
+
+```bash
+# This will run most of the commands above,
+# this will run tests, lint checks, format checks and build command.
+$ npm run test-all
+```
+
