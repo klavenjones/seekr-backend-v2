@@ -78,7 +78,7 @@ $ npm run prettier:write
 
 ```bash
 # This will run most of the commands above,
-# this will run tests, lint checks, format checks and build command.
+# this will run tests, lint checks, format checks and then the build command.
 $ npm run test-all
 ```
 
