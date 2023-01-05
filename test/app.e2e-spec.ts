@@ -12,22 +12,7 @@ describe('AppController (e2e)', () => {
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [
-        AppModule,
-        TypeOrmModule.forRootAsync({
-          useFactory: () => ({
-            type: 'postgres',
-            host: process.env.TEST_DATABASE_HOST,
-            username: process.env.TEST_DATABASE_USER,
-            port: 5432,
-            database: process.env.TEST_DATABASE_NAME,
-            password: process.env.TEST_DATABASE_PASSWORD,
-            synchronize: true,
-            autoLoadEntities: true,
-            dropSchema: true,
-          }),
-        }),
-      ],
+      imports: [AppModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();

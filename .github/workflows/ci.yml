@@ -36,7 +36,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm ci --no-optional
+        run: npm ci
 
       - name: ESLint
         run: npm run lint
@@ -49,6 +49,17 @@ jobs:
 
       - name: E2E
         run: npm run test:e2e
+        env:
+          # The hostname used to communicate with the PostgreSQL service container
+          TEST_DATABASE_HOST: postgres
+          # The default PostgreSQL port
+          TEST_DATABASE_PORT: 5432
+          # The username used in the PostgreSQL service container
+          TEST_DATABASE_USER: postgres
+          # The database name in the PostgreSQL service container
+          TEST_DATABASE_NAME: postgres
+          # The database password in the PostgreSQL service container
+          TEST_DATABASE_PASSWORD: postgres
 
       - name: Build
         run: npm run build
