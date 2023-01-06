@@ -10,9 +10,9 @@ export const typeOrmConfig: DataSourceOptions = {
   database: process.env.DATABASE_NAME,
   username: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
-  migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
-  migrationsRun: true,
+  entities: ['src/**/*.entity.{js,ts}'],
+  migrations: ['src/database/migrations/*{.ts,.js}'],
+  synchronize: true,
   extra: {
     charset: 'utf8mb4_unicode_ci',
   },

@@ -1,5 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { IsAlpha, IsEmail } from 'class-validator';
+
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
@@ -9,11 +10,14 @@ export class User {
   @IsEmail()
   public email: string;
 
-  @Column({ type: 'varchar', length: 50, nullable: false })
-  @IsAlpha()
-  firstName: string;
+  @Column({ type: 'varchar', length: 64 })
+  public password: string;
 
   @Column({ type: 'varchar', length: 50, nullable: false })
   @IsAlpha()
-  lastName: string;
+  public firstName: string;
+
+  @Column({ type: 'varchar', length: 50, nullable: false })
+  @IsAlpha()
+  public lastName: string;
 }
