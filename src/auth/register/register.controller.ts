@@ -1,4 +1,11 @@
-import { Body, Controller, HttpStatus, Post, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  HttpException,
+  HttpStatus,
+  Post,
+  Res,
+} from '@nestjs/common';
 import { RegisterService } from './register.service';
 import { CreateUserDto } from '../../api/user/dto/create-user.dto';
 
@@ -18,6 +25,18 @@ export class RegisterController {
         status: 201,
       });
     } catch (error) {
+      //Lets check if the error is thrown due to the user existing already
+      if (
+        error instanceof HttpException &&
+        error.getStatus() === HttpStatus.CONFLICT
+      ) {
+        //If so, let's send this tho the client
+        return res.status(error.getStatus()).json({
+          message: 'A user with this email already exists',
+          status: error.getStatus(),
+        });
+      }
+      //If not, let's send a standard error. NOTE: Maybe we can implement an exception filter in the future
       return res.status(error.status).json({
         message: error.message,
         status: error.status,

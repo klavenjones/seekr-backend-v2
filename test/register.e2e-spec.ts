@@ -76,7 +76,7 @@ describe('RegisterController (integration)', () => {
       password: '',
     };
 
-    const res = await request(app.getHttpServer())
+    await request(app.getHttpServer())
       .post('/auth/register')
       .send(createUserDto)
       .expect(400);

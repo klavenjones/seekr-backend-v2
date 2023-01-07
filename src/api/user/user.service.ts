@@ -30,4 +30,8 @@ export class UserService {
   remove(id: number): Promise<DeleteResult> {
     return this.userRepository.delete(id);
   }
+
+  getUserByEmail(email: string): Promise<User> {
+    return this.userRepository.findOneBy({ email: email });
+  }
 }

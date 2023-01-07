@@ -136,4 +136,24 @@ describe('UserService', () => {
       expect(result).toEqual(updateResult);
     });
   });
+
+  describe('getOneByEmail', () => {
+    it('should return a user by email', async () => {
+      const user: any = {
+        id: 1,
+        email: 'test@example.com',
+        firstName: 'Test',
+        lastName: 'User',
+      };
+
+      jest.spyOn(repository, 'findOneBy').mockResolvedValue(user);
+
+      const result = await service.getUserByEmail('test@example.com');
+
+      expect(repository.findOneBy).toHaveBeenCalledWith({
+        email: 'test@example.com',
+      });
+      expect(result).toEqual(user);
+    });
+  });
 });
