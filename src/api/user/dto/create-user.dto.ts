@@ -37,7 +37,6 @@ export class CreateUserDto {
   @IsNotEmpty()
   @MinLength(EMAIL_MIN_LENGTH)
   @MaxLength(EMAIL_MAX_LENGTH)
-  @IsAlpha()
   public email: string;
 
   @IsString()
