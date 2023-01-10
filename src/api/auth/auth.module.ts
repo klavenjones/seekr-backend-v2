@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
 import { TypeOrmModule, getRepositoryToken } from '@nestjs/typeorm';
-import { SessionEntity } from './entities/session.entity';
+import { SessionEntity } from './session.entity';
 import { TypeormStore } from 'connect-typeorm';
 import { Repository } from 'typeorm';
 
