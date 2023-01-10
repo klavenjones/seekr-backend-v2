@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LoginService } from './login.service';
-import { UserService } from '../../api/user/user.service';
+import { UserService } from '../../user/user.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { User } from '../../api/user/entities/user.entity';
+import { User } from '../../user/entities/user.entity';
 import * as bcrypt from 'bcrypt';
 
 describe('LoginService', () => {

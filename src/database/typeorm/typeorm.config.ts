@@ -12,7 +12,7 @@ export const typeOrmConfig: DataSourceOptions = {
   password: process.env.DATABASE_PASSWORD,
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/database/migrations/*.js'],
-  synchronize: true,
+  synchronize: false,
   extra: {
     charset: 'utf8mb4_unicode_ci',
   },

@@ -4,7 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { User } from './entities/user.entity';
-
+import dataSource from '../../database/typeorm/typeorm.config';
 @Injectable()
 export class UserService {
   @InjectRepository(User)
@@ -16,11 +16,12 @@ export class UserService {
   }
 
   findAll(): Promise<User[]> {
+    // Make sure the connection is ready before doing this
     return this.userRepository.find();
   }
 
   findOne(id: number): Promise<User> {
-    return this.userRepository.findOneBy({ id });
+    return this.userRepository.findOneBy({ id: id });
   }
 
   update(id: number, updateUserDto: UpdateUserDto): Promise<UpdateResult> {

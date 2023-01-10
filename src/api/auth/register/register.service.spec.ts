@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RegisterService } from './register.service';
-import { CreateUserDto } from '../../api/user/dto/create-user.dto';
-import { UserService } from '../../api/user/user.service';
-import { User } from '../../api/user/entities/user.entity';
+import { CreateUserDto } from '../../user/dto/create-user.dto';
+import { UserService } from '../../user/user.service';
+import { User } from '../../user/entities/user.entity';
 import { HttpException } from '@nestjs/common';
 
 describe('RegisterService', () => {

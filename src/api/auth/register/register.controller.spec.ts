@@ -2,8 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { RegisterController } from './register.controller';
 import { RegisterService } from './register.service';
 import { HttpStatus } from '@nestjs/common';
-import { CreateUserDto } from '../../api/user/dto/create-user.dto';
-import { User } from '../../api/user/entities/user.entity';
+import { CreateUserDto } from '../../user/dto/create-user.dto';
+import { User } from '../../user/entities/user.entity';
 
 describe('RegisterController', () => {
   let controller: RegisterController;

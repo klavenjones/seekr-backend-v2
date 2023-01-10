@@ -8,7 +8,7 @@ import { Repository } from 'typeorm';
 import { CreateUserDto } from '../src/api/user/dto/create-user.dto';
 import * as dotenv from 'dotenv';
 import { UserModule } from '../src/api/user/user.module';
-import { AuthModule } from '../src/auth/auth.module';
+import { RegisterModule } from '../src/api/auth/register/register.module';
 
 dotenv.config();
 
@@ -20,7 +20,7 @@ describe('RegisterController (integration)', () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         UserModule,
-        AuthModule,
+        RegisterModule,
         TypeOrmModule.forRootAsync({
           useFactory: () => ({
             type: 'postgres',
