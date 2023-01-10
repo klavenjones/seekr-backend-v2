@@ -10,7 +10,6 @@ import {
 import { LocalAuthGuard } from '../guards/local.auth.guard';
 import { AuthGuard } from '@nestjs/passport';
 
-
 @Controller('auth')
 export class LoginController {
   @UseGuards(LocalAuthGuard)

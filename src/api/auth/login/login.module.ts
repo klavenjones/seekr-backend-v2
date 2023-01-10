@@ -8,7 +8,6 @@ import { User } from 'src/api/user/entities/user.entity';
 import { LocalStrategy } from '../strategies/local.strategy';
 import { SessionSerializer } from 'src/util/session.serializer';
 
-
 @Module({
   imports: [
     TypeOrmModule.forFeature([User]),

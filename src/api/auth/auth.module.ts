@@ -6,7 +6,6 @@ import { SessionEntity } from './entities/session.entity';
 import { TypeormStore } from 'connect-typeorm';
 import { Repository } from 'typeorm';
 
-
 @Module({
   imports: [
     RegisterModule,
